@@ -8,6 +8,6 @@ File.readlines('input').each_with_object(total_counts_array) do |cal, arr|
   current_count = 0
 end
 
-total_top_three = total_counts_array.sort.last(3).sum
+total_top_three = total_counts_array.sort.reverse.first(3).sum
 
 pp "Top three elves have #{total_top_three} calories total"
