@@ -1,17 +1,17 @@
 key_hash = {
-  %w[A X] => [0, 3],
-  %w[A Y] => [3, 1],
-  %w[A Z] => [6, 2],
-  %w[B X] => [0, 1],
-  %w[B Y] => [3, 2],
-  %w[B Z] => [6, 3],
-  %w[C X] => [0, 2],
-  %w[C Y] => [3, 3],
-  %w[C Z] => [6, 1]
+  %w[A X] => 3,
+  %w[A Y] => 4,
+  %w[A Z] => 8,
+  %w[B X] => 1,
+  %w[B Y] => 5,
+  %w[B Z] => 9,
+  %w[C X] => 2,
+  %w[C Y] => 6,
+  %w[C Z] => 7
 }
 score = File.readlines('input').reduce(0) do |score, match_outcome|
   match_outcome = match_outcome.strip.split(' ')
-  points = key_hash[match_outcome].sum
+  points = key_hash[match_outcome]
   score + points
 end
 
